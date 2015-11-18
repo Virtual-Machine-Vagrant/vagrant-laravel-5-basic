@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 
 // display tasks
 Route::get('/', function () {
-    $tasks = Task::orderBy('created_at', 'desc')->get();
+    $tasks = Task::orderBy('created_at', 'asc')->get();
 
     return view('tasks', [
         'tasks' => $tasks

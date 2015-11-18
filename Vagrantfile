@@ -25,7 +25,6 @@ Vagrant.configure(2) do |config|
     puppet.manifests_path = "#{puppet_dir}/manifests"
     puppet.manifest_file = "site.pp"
     puppet.module_path = ["#{puppet_dir}/modules"]
-    #puppet.options = "--graph --graphdir '/root/'"
   end
 
 end

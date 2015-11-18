@@ -5,6 +5,10 @@ class php_fpm {
   $log_path = "/var/log/php5-fpm.error.log"
   $socket_path = "/var/run/php5-fpm.socket"
 
+  exec { 'fix locale':
+    command => '/usr/sbin/locale-gen en_US.UTF-8 && export LANG=en_US.UTF-8'
+  }
+
   # describe configuration file for php5-fpm
   file { 'php_fpm conf':
     path    => '/etc/php5/fpm/php-fpm.conf',
@@ -19,6 +23,7 @@ class php_fpm {
     ensure  => running,
     enable  => true,
     require => [
+      Exec["fix locale"],
       File["php_fpm conf"],
       Package["php5-fpm"],
     ],
