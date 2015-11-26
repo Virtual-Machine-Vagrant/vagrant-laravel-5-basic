@@ -1,16 +1,16 @@
-#Vagrant + Puppet 101
+#Vagrant + Puppet Demo
 
 Laravel 5.1 [tasks example](http://laravel.com/docs/5.1/quickstart) build with Vagrant and Puppet.
 
 ##Installation
 
-Is quite simple:
+Quite simple:
 
  * install [Vagrant](https://www.vagrantup.com/downloads.html)
  * checkout project
 
 ```bash
-git clone git@github.com:arkady-emelyanov/vagrant-puppet-101.git
+git clone git@github.com:arkady-emelyanov/vagrant-puppet-demo.git
 ```
 
  * build vagrant machine
@@ -25,13 +25,13 @@ vagrant up
 vagrant ssh
 ``` 
 
- * setup project
+ * setup project (create database, apply migrations, load development fixtures)
  
 ```bash
 ./setup_dev.sh
 ``` 
 
- * point browser to [Project root](http://127.0.0.1:8081)
+ * point browser to [127.0.0.1:8081](http://127.0.0.1:8081)
 
 ##Tests
 
